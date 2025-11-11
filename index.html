@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>献出一颗❤️</title>
+  <style>
+    body {
+      font-family: "Noto Serif SC", "Times New Roman", serif;
+      background-color: #f9f4ed;
+      color: #3b2f2f;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .heart {
+      color: #b23a48;
+    }
+    .image-container {
+      background-color: #f0e6d2;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 25px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .saying {
+      font-size: 18px;
+      min-height: 50px;
+      margin: 20px 0;
+      color: #4b3a2f;
+      font-style: italic;
+      transition: opacity 0.3s ease;
+    }
+    button {
+      background-color: #e3c59b;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 30px;
+      font-size: 18px;
+      color: #3b2f2f;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #d4b181;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>献出一颗<span class="heart">❤️</span></h1>
+    <div class="image-container">
+      < img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Dunhuang_Mogao_Caves_Buddha_Painting.jpg" alt="Dunhuang Buddha">
+    </div>
+    <div class="saying" id="saying">Receive an English Buddhist saying</div>
+    <button onclick="showSaying()">献出一颗❤️</button>
+  </div>
+
+  <script>
+    const sayings = [
+      "Peace comes from within. Do not seek it without.",
+      "The mind is everything. What you think, you become.",
+      "Let go of what was, accept what is, and have faith in what will be.",
+      "Better than a thousand hollow words is one word that brings peace.",
+      "To understand everything is to forgive everything.",
+      "No one saves us but ourselves. We must walk the path alone.",
+      "Those who are free of resentful thoughts surely find peace."
+    ];
+
+    function showSaying() {
+      const random = sayings[Math.floor(Math.random() * sayings.length)];
+      const sayingDiv = document.getElementById("saying");
+      sayingDiv.style.opacity = 0;
+      setTimeout(() => {
+        sayingDiv.textContent = random;
+        sayingDiv.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
